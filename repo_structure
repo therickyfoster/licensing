@@ -1,0 +1,213 @@
+# Recommended Repository Structure for therickyfoster/licensing
+
+## File Structure
+```
+licensing/
+├── README.md                          # Overview and philosophy
+├── CORE-LICENSE.md                    # AGPL v3 for core technology
+├── REVENUE-MODEL.md                   # Clear revenue model explanation
+├── licenses/
+│   ├── agpl-v3.md                    # Core framework license
+│   ├── impact-verification-tos.md    # Terms for paid verification service
+│   ├── managed-service-agreement.md  # Template for managed deployments
+│   └── contributor-agreement.md      # CLA for contributors
+├── revenue-sharing/
+│   ├── smart-contract.sol            # Revenue distribution contract
+│   ├── contributor-rewards.md        # How contributors get paid
+│   └── impact-fund.md               # Community impact fund rules
+├── templates/
+│   ├── project-specific/
+│   │   ├── community-garden.md      # Template for community projects
+│   │   ├── enterprise.md            # Enterprise deployment template
+│   │   └── research.md              # Academic use template
+│   └── service-agreements/
+│       ├── support-sla.md           # Support agreement template
+│       ├── training-agreement.md    # Training services template
+│       └── data-marketplace.md     # Data sharing agreement
+└── examples/
+    ├── dual-license-setup.md        # How to implement dual licensing
+    ├── revenue-integration.md       # Adding revenue to open source
+    └── impact-measurement.md        # Measuring and monetizing impact
+```
+
+## Key Files to Create:
+
+### 1. **README.md** - Clear Philosophy
+```markdown
+# Planetary Restoration Archive Licensing Framework
+
+## Our Philosophy: Impact First, Sustainability Always
+
+We believe planetary restoration technology should be:
+- **Free to use** for those doing the work
+- **Sustainable** for those building the tools
+- **Transparent** in governance and revenue
+
+## How It Works
+
+### 🌍 Core Technology: Forever Free (AGPL v3)
+All core restoration tools, frameworks, and methodologies are licensed under AGPL v3, ensuring they remain free and improvements flow back to the community.
+
+### 💚 Sustainability Services: Optional Paid Support
+We offer optional services that make deployment easier:
+- Managed hosting and monitoring
+- Impact verification and reporting
+- Training and certification
+- Enterprise support
+
+### 🤝 Revenue Sharing: Community Driven
+Revenue from services is transparently shared:
+- 40% - Core development
+- 20% - Contributor rewards
+- 20% - Impact grants
+- 10% - Community treasury
+- 10% - Emergency fund
+
+## Quick Start
+
+1. **Using the technology?** → It's free under AGPL v3
+2. **Want managed services?** → See our [service offerings](REVENUE-MODEL.md)
+3. **Want to contribute?** → Read the [contributor agreement](licenses/contributor-agreement.md)
+4. **Building a business?** → Check our [dual license guide](examples/dual-license-setup.md)
+```
+
+### 2. **CORE-LICENSE.md** - Simple AGPL v3
+```markdown
+# Core Technology License
+
+All core Planetary Restoration Archive technologies are licensed under:
+
+**GNU Affero General Public License v3.0 (AGPL-3.0)**
+
+This means:
+- ✅ Free to use, modify, and distribute
+- ✅ Must share source code of modifications
+- ✅ Network use requires source disclosure
+- ✅ Patent protection included
+
+Full license text: https://www.gnu.org/licenses/agpl-3.0.en.html
+
+## Why AGPL?
+We chose AGPL to ensure that improvements to planetary restoration technology 
+return to the commons, while still allowing sustainable business models through 
+services and support.
+```
+
+### 3. **REVENUE-MODEL.md** - Crystal Clear Business Model
+```markdown
+# Sustainable Revenue Model
+
+## How We Generate Income While Keeping Tools Free
+
+### Core Principle
+**Technology = Free | Services = Paid**
+
+### Revenue Streams
+
+#### 1. Impact Verification Service ($29-999/month)
+- Automated impact reporting
+- Grant compliance documentation
+- Carbon credit integration
+- Public impact dashboards
+
+#### 2. Managed Deployments ($99-2,999/month)
+- Fully managed infrastructure
+- Automatic updates
+- 24/7 monitoring
+- Guaranteed uptime SLA
+
+#### 3. Training & Certification ($299-2,999)
+- Professional certification programs
+- Custom enterprise training
+- Implementation workshops
+
+#### 4. Enterprise Support ($10k-100k/year)
+- Dedicated support channels
+- Custom feature development
+- Compliance assistance
+- White-label options
+
+### Transparent Revenue Sharing
+All revenue is distributed via smart contract:
+- 40% Core development
+- 20% Contributor rewards
+- 20% Impact grants
+- 10% Community treasury
+- 10% Emergency fund
+
+### Start Generating Revenue
+1. Deploy the core (free)
+2. Offer verification services
+3. Scale with enterprise contracts
+
+Contact: admin@planetaryrestorationarchive.com
+```
+
+### 4. **smart-contract.sol** - Automated Revenue Sharing
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract PRARevenueSharing {
+    address public coreDevelopment;  // 40%
+    address public contributorPool;   // 20%
+    address public impactGrants;      // 20%
+    address public communityTreasury; // 10%
+    address public emergencyFund;     // 10%
+    
+    event RevenueDistributed(uint256 amount);
+    
+    function distributeRevenue() public payable {
+        require(msg.value > 0, "No revenue to distribute");
+        
+        uint256 amount = msg.value;
+        
+        // Distribute according to model
+        payable(coreDevelopment).transfer(amount * 40 / 100);
+        payable(contributorPool).transfer(amount * 20 / 100);
+        payable(impactGrants).transfer(amount * 20 / 100);
+        payable(communityTreasury).transfer(amount * 10 / 100);
+        payable(emergencyFund).transfer(amount * 10 / 100);
+        
+        emit RevenueDistributed(amount);
+    }
+}
+```
+
+## Why This Structure Works
+
+### For You:
+- **Clear path to revenue** without compromising values
+- **Legal protection** through standard licenses
+- **Community trust** through transparency
+- **Scalable model** that grows with impact
+
+### For Users:
+- **Understand immediately** what's free vs paid
+- **Trust the model** because it's transparent
+- **Can contribute** and get rewarded
+- **Can deploy** without legal confusion
+
+### For the Planet:
+- **Core tools remain free** forever
+- **Revenue funds more development**
+- **Creates sustainable ecosystem**
+- **Scales impact** through aligned incentives
+
+## Implementation Steps
+
+1. **Clean up the repository** - Remove complex licenses
+2. **Add the new structure** - Clear, simple files
+3. **Create service offerings** - Start with verification
+4. **Deploy smart contracts** - Automate revenue sharing
+5. **Launch patron tiers** - Get immediate recurring revenue
+
+## The Key Insight
+
+People don't need complex licenses - they need:
+- Clarity on what's free
+- Understanding of what's paid
+- Trust in the model
+- Easy ways to support
+
+This structure provides all of that while protecting your interests and maximizing planetary benefit.
